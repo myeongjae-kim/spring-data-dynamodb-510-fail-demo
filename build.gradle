@@ -20,7 +20,7 @@ sourceCompatibility = '1.8'
 
 ext {
 	modelMapperVersion = "2.3.0"
-    awsJavaSdkDynamoDB = "1.11.490"
+	awsJavaSdkDynamoDB = "1.11.490"
 
 //	springDataDynamoDBVersion = "5.0.4"
 //	springDataVersion = "2.0.13.RELEASE"
