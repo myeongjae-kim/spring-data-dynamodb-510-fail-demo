@@ -1,0 +1,8 @@
+amazon:
+  dynamodb:
+    #TODO: We have to change below endpoint according to running environment (development or production)
+    endpoint: "http://localhost:8000"
+    region: "ap-northeast-2"
+  aws:
+    accesskey: "key"
+    secretkey: "key2"

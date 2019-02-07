@@ -1,0 +1,47 @@
+buildscript {
+	ext {
+		springBootVersion = '2.1.2.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'kim.myeongjae.spring-data-dynamodb-guestbook'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+ext {
+	modelMapperVersion = "2.3.0"
+    awsJavaSdkDynamoDB = "1.11.490"
+
+//	springDataDynamoDBVersion = "5.0.4"
+//	springDataVersion = "2.0.13.RELEASE"
+	springDataDynamoDBVersion = "5.1.0"
+	springDataVersion = "2.1.2.RELEASE"
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation "org.modelmapper:modelmapper:${modelMapperVersion}"
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation "org.springframework.data:spring-data-commons:${springDataVersion}"
+
+	implementation("com.amazonaws:aws-java-sdk-dynamodb:${awsJavaSdkDynamoDB}")
+	implementation("com.github.derjust:spring-data-dynamodb:${springDataDynamoDBVersion}")
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	runtimeOnly 'org.springframework.boot:spring-boot-devtools'
+}
